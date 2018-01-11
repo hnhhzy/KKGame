@@ -6,3 +6,5 @@
 Debug/  
 Release/  
 obj/  
+*.db
+*.opendb
