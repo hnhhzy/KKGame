@@ -75,8 +75,8 @@ namespace KKServer.Server
                             break;
                         }
                     }
-                    string account = Encoding.GetEncoding("utf-8").GetString(buffer, 8, splitIndex - 8);
-                    string password = Encoding.GetEncoding("utf-8").GetString(buffer, splitIndex + 1, arg2-splitIndex - 2);
+                    string account = Encoding.UTF8.GetString(buffer, 8, splitIndex - 8);
+                    string password = Encoding.UTF8.GetString(buffer, splitIndex + 1, arg2-splitIndex - 2);
                     DebugLog.Show("玩家登陆 帐号" + account + ",密码:" + password);
 
                     CMD_SERVER_LIST cmd = new CMD_SERVER_LIST();
@@ -98,7 +98,7 @@ namespace KKServer.Server
                 }
                 else if (cmd_head.CMDID == 0x0290)      // 登陆角色
                 {
-                    string roleid = Encoding.GetEncoding("utf-8").GetString(buffer, 8, buffer[7]);
+                    string roleid = Encoding.UTF8.GetString(buffer, 8, buffer[7]);
                     DebugLog.Show("玩家登陆 角色" + roleid);
                     // 登陆游戏包，无需修改任何东西
                     byte[] data1 = { 0x00, 0x01, 0x70, 0x03, 0x00, 0x00, 0x00, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
