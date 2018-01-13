@@ -34,10 +34,10 @@ namespace KKServer.Server
             //KKNetEngine.KKNet KKNet = new KKNetEngine.KKNet();
             //server.SetAttached(obj, KKNet);
             //Console.WriteLine($"Pull已连接{obj}");
-            byte[] test = { 0x00, 0x01, 0x00, 0x01, 0x70, 0x06, 0x00, 0x00, 0x00, 0x01, 0x01 };
+            byte[] init_data = { 0x00, 0x01, 0x00, 0x01, 0x70, 0x06, 0x00, 0x00, 0x00, 0x01, 0x01 };
             // 引擎初始化
             server.InitKKNet(obj);
-            server.Send(obj, test, 0, test.Length);
+            server.Send(obj, init_data, 0, init_data.Length);
 
             CMD_MESSAGE_BOX cmd = new CMD_MESSAGE_BOX();
             byte[] cmd_data = cmd.SetText("0\n欢迎进入KK开发服\nhttps://github.com/hnhhzy/KKGame\n", 0x19);
