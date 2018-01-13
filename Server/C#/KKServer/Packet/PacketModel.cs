@@ -8,7 +8,12 @@ namespace KKServer.Packet
 {
     public class CMD_DATA
     {
-        public byte Key;
+        public short key;
         public short CMDID;
+
+        public CMD_DATA()
+        {
+            key = 0x1;
+        }
     }
 }

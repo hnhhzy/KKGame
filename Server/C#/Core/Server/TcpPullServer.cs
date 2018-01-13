@@ -109,6 +109,7 @@ namespace socket.core.Server
         /// <param name="length">长度</param>
         public void Send(Guid connectId, byte[] data, int offset, int length)
         {
+            tcpServer.Encode(connectId, data, data.Length);
             tcpServer.Send(connectId, data, offset, length);            
         }
 

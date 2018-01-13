@@ -6,24 +6,13 @@ using System.Threading.Tasks;
 
 namespace KKServer.Packet
 {
-    public class CMD_DATAX
-    {
-        public short key;
-        public short CMDID;
-
-        public CMD_DATAX()
-        {
-            key = 0x1;
-        }
-    }
-
     public class CMD_LOGIN_FIRST
     {
         public byte[] data;
     }
 
 
-    public class CMD_MESSAGE_BOX : CMD_DATAX
+    public class CMD_MESSAGE_BOX : CMD_DATA
     {
         private int MessageLen;
         private byte SUB_CMDID;
@@ -57,7 +46,7 @@ namespace KKServer.Packet
         }
     }
 
-    public class CMD_SERVER_LIST : CMD_DATAX
+    public class CMD_SERVER_LIST : CMD_DATA
     {
         private int MessageLen;
 
@@ -116,7 +105,7 @@ namespace KKServer.Packet
         }
     }
 
-    public class CMD_ACCOUNT_STATUS : CMD_DATAX
+    public class CMD_ACCOUNT_STATUS : CMD_DATA
     {
         private int MessageLen;
         private int unkown;
@@ -153,7 +142,7 @@ namespace KKServer.Packet
 
     }
 
-    public class CMD_ROLE_LIST : CMD_DATAX
+    public class CMD_ROLE_LIST : CMD_DATA
     {
         private int MessageLen;
         private short num;
