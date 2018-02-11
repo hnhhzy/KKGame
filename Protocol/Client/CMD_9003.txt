@@ -1,0 +1,32 @@
+cmd: [0x90, 0x03]
+desc: Create Character
+data_format: {
+    "character_id": "null_end_str",
+    "character_name": "null_end_str",
+    "class": "short", // 00战士, 01牧师, 02魔法师
+    "gender": "byte", // 00男, 01女
+    "hair": "byte", // 发型 00-04 短髮 長髮 馬尾 光頭 辮子
+    "beard": "byte", // 胡子 01-03 無 白長鬍子 落腮鬍 (仅男性)
+    "hair_color": "byte", // 发色 00-04 黑色 白色 紅色 灰色 金色
+    "cloth": "byte", // 服装 01-03
+    "age": "byte", // 年龄 00少年, 01青年, 02壮年
+    "enter_newbie": "byte" // 进新手区 00不进, 01进
+}
+
+example:
+    character_id = "character"
+    character_name = "测试玩家"
+    class = 02
+    gender = 00
+    hair = 03
+    beard = 02
+    hair_color = 01
+    cloth = 03
+    age = 01
+    enter_newbie = 01
+
+    0x00, 0x01, 0x90, 0x03, 0x00, 0x00, 0x00, 0x20,
+    0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65,
+    0x72, 0x00, 0xE6, 0xB5, 0x8B, 0xE8, 0xAF, 0x95,
+    0xE7, 0x8E, 0xA9, 0xE5, 0xAE, 0xB6, 0x00, 0x00,
+    0x02, 0x00, 0x03, 0x02, 0x01, 0x03, 0x01, 0x01
