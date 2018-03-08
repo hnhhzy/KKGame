@@ -1,0 +1,62 @@
+﻿指令:[0x00, 0x20]
+描述:播放释放法术音乐(目标x,y坐标必须存在有效目标)
+
+格式: 
+    0x00~0x01: 目标X坐标
+    0x02~0x03: 目标Y坐标
+	0x04~0x05: 法术序号
+示例: 
+    目标X坐标 = 135
+	目标Y坐标 = 193
+	法术序号 = 0x76 (法王定身咒)
+   
+	0x00, 0x01, 0x00, 0x20, 0x00, 0x00, 0x00, 0x06,
+	0x00, 0x87, 0x00, 0xC1, 0x00, 0x76
+	
+备注一转法术id
+ NAME = {
+        0x03: "反魔法力场(anti_magic)",
+        0x04: "弧光指(arc_fire)",
+        0x05: "祝福(bless)",
+        0x08: "魔法镀膜(coating)",
+        0x09: "治疗术(cure)",
+        0x0A: "疗毒术(cure_poison)",
+        0x11: "侦测隐形(detect_invi)",
+        0x15: "喷火龙(dragon_breath)",
+        0x16: "火龙变幻(dragon)",
+        0x17: "恐惧术(fear)",
+        0x18: "火球术(fireball)",
+        0x19: "萤光术(firefly)",
+        0x1A: "急救术(first_aid)",
+        0x1B: "飞拳术(fist)",
+        0x1D: "核融合术(flare)",
+        0x1E: "飘浮(float)",
+        0x1F: "冻结术(freeze)",
+        0x20: "重力倍增(gravity)",
+        0x23: "恢复术(heal)",
+        0x28: "神圣精神(holy_spirit)",
+        0x2A: "圣水术(holy_water)",
+        0x2C: "冰刃风暴(ice_lance)",
+        0x2D: "隐身术(invisible)",
+        0x2F: "召雷术(lightning)",
+        0x31: "闪电球(lightning_sphere)",
+        0x33: "巫师之火(magefire)",
+        0x34: "魔法弹(magic_missle)",
+        0x35: "亚伯拉之盾(magic_shield)",
+        0x36: "造绳术(make_rope)",
+        0x3A: "巨魔之力(ogre_power)",
+        0x3B: "毒击(poison)",
+        0x3F: "强力恢复(restore)",
+        0x41: "暗之盾(shadow_shield)",
+        0x44: "吸魂术(soul_steal)",
+        0x45: "幽灵之触(spectre_touch)",
+        0x47: "心灵之鎚(spirit_hammer)",
+        0x48: "化石术(stone)",
+        0x49: "硬皮术(stone_skin)",
+        0x4A: "冰雪风暴(storm)",
+        0x4B: "强壮(strong)",
+        0x4C: "电击术(stun)",
+        0x4D: "召唤元素(summon_element)",
+        0x50: "造狼术(wolf)",
+    }
+	
