@@ -2,6 +2,27 @@
 描述:显示mob
 
 格式: 
+// Martin Version
+data_format: {
+    "x": "short",
+    "y": "short",
+    "direction": "byte", // 朝向
+    "nick": "null_end_str", // 昵称 0x00结尾字符串
+    "name": "null_end_str", // 名字 0x00结尾字符串
+    "id": "null_end_str", // id 0x00结尾字符串
+    "mob_type": "int", // ?生物类别 09=人类?
+    "mob_kind": "int", // ?生物种类 01=男性 02=女性 其他??
+    "hat_id": "int", // ?帽子外观?
+    "??": "int", // ???外观?
+    "cloth_id": "int", // ?衣服外观?
+    "??": "int", // ???外观?
+    "shoes_id": "int", // ?鞋子外观?
+    "cloak_id": "int", // ?披风外观?
+    "weapon_id": "int", // ?右手武器外观?
+    "weapon_2_id": "int", // ?左手武器外观?
+}
+
+// moontie Version
     0x00~0x01: X坐标
     0x02~0x03: Y坐标
 	0x04:MOB朝向(01右下)
