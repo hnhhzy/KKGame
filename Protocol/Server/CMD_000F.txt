@@ -1,8 +1,7 @@
 cmd: [0x70, 0x0F]
 desc: 人物属性变化,以及频道开关通知
 data_format:  {
-        "prop_name": "max_sp",
-        "separator": 0x00, // 0x00  
+        "prop_name": "max_sp", // null_end_str
         "value": 1180 
     }
 example: 
@@ -34,3 +33,48 @@ class_channel:0
 hero_channel:1
 free_channel:0
 ad_channel:0
+
+// Martin
+基本上是跟面板相关的信息变化, 会通过这个进行更新
+recall时, 身上装备所加的额外属性和状态, 也是通过这个来反应出来, 而且并不是直接给出最终结果, 而是基础值的基础上, 每件装备逐个发包结算.
+
+例如我巫妖, 所穿装备, 按照登录时的下发顺序为
+item get: *璇月之鏢 飞镖
+item get: *月神戒指(蓝) 戒指
+item get: *玄天之履 鞋子
+item get: *金絲手套 手套
+item get: *神蹟法帽 帽子
+item get: *月影項鍊 项链
+item get: *火幟法袍 衣服
+item get: *人间梦华披(34+5布智) 披风
+
+0x000F包的接收顺序如下, 由于无额点, 基础智力是36, 只开妖气, 防御是0, 额防是12, 所以初始只有一个defense_bouns: 12
+defense_bonus: 12
+结算 月神戒指(蓝)
+defense_bonus: 30
+int: 41
+max_sp: 1528
+结算 玄天之履
+cold: 10
+int: 47
+max_sp: 1652
+结算 金丝手套
+int: 51
+max_sp: 1736
+con: 38
+max_hp: 460
+结算 神迹法帽
+defense_bonus: 64
+int: 56
+max_sp: 1840
+藉著法師的祝福，你降伏法帽的力量，將法帽戴起來，並且得到法帽的庇佑。
+结算 月影项链
+int: 61
+max_sp: 1944
+magic: 12
+结算 +5智披风
+int: 66
+max_sp: 2048
+武器最后结算
+weapon_class: 50
+max_damage: 60
