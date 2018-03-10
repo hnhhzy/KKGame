@@ -1,0 +1,36 @@
+cmd: [0x70, 0x0F]
+desc: 人物属性变化,以及频道开关通知
+data_format:  {
+        "prop_name": "max_sp",
+        "separator": 0x00, // 0x00  
+        "value": 1180 
+    }
+example: 
+    prop_name = "max_sp"
+    value = 1180
+0x00 0x01 0x00 0x0F 0x00 0x00 0x00 0x09 0x6D 0x61 0x78 0x5F 0x73 0x70 0x00 0x04 0x9C 
+max_sp:1180
+page:0//点柜台,雕像,草人,魔法柱等也会提示
+str:1041
+max_load:1002 最大负重
+int:61 智慧
+max_sp:1500 最大魔法值
+defense_bonus:101  额防
+weapon_class:39 命中
+max_damage:41  伤害
+sta:41 毅力
+sp:1420
+str:36 力量
+频道开关0关闭1屏幕显示2小窗显示
+tell_channel:1
+chat_channel:2
+rumor_channel:0
+auc_channel:2
+party_channel:1
+kingdom_channel:1
+org_channel:1
+system_channel:1
+class_channel:0
+hero_channel:1
+free_channel:0
+ad_channel:0
